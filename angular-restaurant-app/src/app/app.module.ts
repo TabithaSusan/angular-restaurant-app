@@ -8,7 +8,7 @@ import { ErrorPage404Component } from './error-page404/error-page404.component';
 @NgModule({
   declarations: [
     AppComponent,
-    ErrorPage404Component
+    ErrorPage404Component,
   ],
   imports: [
     BrowserModule,
