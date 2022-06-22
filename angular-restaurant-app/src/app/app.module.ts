@@ -3,12 +3,14 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { BookTableComponent } from './book-table/book-table.component';
+import { ErrorPage404Component } from './error-page404/error-page404.component';
+import { BookRoomComponent } from './book-room/book-room.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    BookTableComponent
+    ErrorPage404Component,
+    BookRoomComponent
   ],
   imports: [
     BrowserModule,

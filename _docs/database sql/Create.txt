@@ -110,6 +110,3 @@ VALUES
 (3,'Kindermenü', 9,90),
 
 (4,'Hochzeitsmenü', 25,90);
-
-
-
