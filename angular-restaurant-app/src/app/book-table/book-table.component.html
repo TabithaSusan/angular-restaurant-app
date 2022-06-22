@@ -1,18 +1,89 @@
 <p>book-table works!</p>
-<form>
-    <input type="" <select name="partysize" id="partysize">
-    <option value="onePerson">Eine Person</option>
-    <option value="twoPersons">Zwei Personen</option>
-    <option value="threePersons">Drei Personen</option>
-    <option value="fourPersons">Vier Personen</option>
-    <option value="fivePersons">Fünf Personen</option>
-    <option value="sixPersons">Sechs Personen</option>
-    </select>
+<!-- Reservations page - OPENTABLE -->
+<section class="reservation">
+    <div class="reservation-form wow fadeInUp">
+        <div class="open-table-container" data-restaurant-id="66241">
+            <div id="OT_searchWrapperAll">
+                <form name="ism" id="ism" method="POST" action="https://secure.opentable.com/ism/interim.aspx">
+                    <div id="OT_searchWrapper">
+                        <div id="OT_defList" class="row">
+                            <div id="OT_date" class="col-md-4">
+                                <div class="form-group">
+                                    <input type="text" id="datepicker" class="OT_feedFormfieldCalendar datepicker" name="startDate" placeholder="Welches Datum?">
+                                    <i class="fa fa-calendar-o"></i>
+                                </div>
+                            </div>
+                            <div id="OT_partySize" class="col-md-4">
+                                <div class="form-group">
+                                    <select name="PartySize" class="feedFormField">
+                                                <option selected disabled>Wie viele Personen?</option>
+                                                <option value="1">1 Person</option>
+                                                <option value="2">2 Personen</option>
+                                                <option value="3">3 Personen</option>
+                                                <option value="4">4 Personen</option>
+                                                <option value="5">5 Personen</option>
+                                                <option value="6">6 Personen</option>
+                                                <option value="7">7 Personen</option>
+                                                <option value="8">8 Personen</option>
+                                                <option value="9">9 Personen</option>
+                                                <option value="10">10 Personen</option>
+                                            </select>
+                                    <i class="fa fa-user"></i>
+                                </div>
+                            </div>
+                            <div id="OT_time" class="col-md-4">
+                                <div class="form-group">
+                                    <select name="ResTime" class="feedFormField">
+                                                <option selected disabled>Welche Uhrzeit?</option>
+                                                <option value="11:00">11:00</option>
+                                                <option value="11:30">11:30</option>
+                                                <option value="12:00">12:00</option>
+                                                <option value="12:30">12:30</option>
+                                                <option value="13:00">13:00</option>
+                                                <option value="13:30">13:30</option>
+                                                <option value="14:00">14:00</option>
+                                                <option value="14:30">14:30</option>
+                                                <option value="15:00">15:00</option>
+                                                <option value="15:30">15:30</option>
+                                                <option value="16:00">16:00</option>
+                                                <option value="16:30">16:30</option>
+                                                <option value="17:00">17:00</option>
+                                                <option value="17:30">17:30</option>
+                                                <option value="18:00">18:00</option>
+                                                <option value="18:30">18:30</option>
+                                                <option value="19:00">19:00</option>
+                                                <option value="19:30">19:30</option>
+                                                <option value="20:00">20:00</option>
+                                                <option value="20:30">20:30</option>
+                                                <option value="21:00">21:00</option>
+                                                <option value="21:30">21:30</option>
+                                                <option value="22:00">22:00</option>
+                                            </select>
+                                    <i class="fa fa-clock-o"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="OT_submitWrap" class="reservation-btn">
+                        <button type="submit" class="btn btn-default btn-lg OT_TableButton">Reservation machen</button>
+                    </div>
 
-    <input type="date" id="calender" name="bookTableDate" value="2022-06-15" min="2022-05-01" max="2030-05-01">
+                    <!-- // end .text-center -->
+                    <div class="OT_hidden">
+                        <input type="hidden" class="OT_hidden" name="RestaurantID" value="">
+                        <input type="hidden" class="OT_hidden" name="GeoID" value="7">
+                        <input type="hidden" class="OT_hidden" name="txtHidServerTime" value="6/26/2014 8:50 PM">
+                        <input type="hidden" class="OT_hidden" name="txtDateFormat" value="MM/dd/yyyy">
+                    </div>
+                </form>
+                <noscript>&amp;lt;a href="http://www.omniture.com" title="Web Analytics"&amp;gt;&amp;lt;img src="http://o.opentable.com/b/ss/otrestref/1/H.22.1--NS/0" height="1" width="1" border="0" alt="" /&amp;gt;&amp;lt;/a&amp;gt;</noscript>
+                <!--/DO NOT REMOVE/-->
+            </div>
+        </div>
+    </div>
+    <div class="reservation-footer">
+        <p>Ihr könnt uns auch per Telefon erreichen um eine Reservation zu machen. <strong> +49 1234 5678910</strong></p>
 
-    <input type="time" id="time" name="bookTableTime" min="14:00" max="23:00">
-
-    <input type="submit" value="Reservation machen">
-    <button type="submit">Reservation machen</button>
-</form>
+        <span></span>
+    </div>
+</section>
