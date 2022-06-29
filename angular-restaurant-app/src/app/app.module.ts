@@ -5,12 +5,14 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { ErrorPage404Component } from './error-page404/error-page404.component';
 import { BookRoomComponent } from './book-room/book-room.component';
+import { BookTableComponent } from './book-table/book-table.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     ErrorPage404Component,
-    BookRoomComponent
+    BookRoomComponent,
+    BookTableComponent
   ],
   imports: [
     BrowserModule,
