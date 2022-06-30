@@ -13,7 +13,7 @@ import { BookTableComponent } from './book-table/book-table.component';
     AppComponent,
     ErrorPage404Component,
     BookRoomComponent,
-    BookTableComponent
+    BookTableComponent,
     ContactComponent
   ],
   imports: [
