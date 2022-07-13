@@ -15,6 +15,7 @@ import { Reservierungsvorgang404Component } from './reservierungsvorgang404/rese
 import { TischSuccessComponent } from './tisch-success/tisch-success.component';
 import { RaumSuccessComponent } from './raum-success/raum-success.component';
 import { BestellungSuccessComponent } from './bestellung-success/bestellung-success.component';
+import { BookTableComponent } from './book-table/book-table.component';
 
 @NgModule({
   declarations: [
@@ -29,7 +30,8 @@ import { BestellungSuccessComponent } from './bestellung-success/bestellung-succ
     Reservierungsvorgang404Component,
     TischSuccessComponent,
     RaumSuccessComponent,
-    BestellungSuccessComponent
+    BestellungSuccessComponent,
+    BookTableComponent
   ],
   imports: [
     BrowserModule,
