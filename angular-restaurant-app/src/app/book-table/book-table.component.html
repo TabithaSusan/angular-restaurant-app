@@ -1,0 +1,53 @@
+<!-- <p>book-table works!</p> -->
+<section class="reservation">
+
+    <form name="ResForm" id="ResForm" method="post" action="booktable.php">
+        <!-- still not working currently because of missing connection towards database-->
+
+        <div>
+
+            <input type="date" id="datepicker" name="startDate" placeholder="Welches Datum?" required>
+
+            <select name="PartySize" class="PartySize" id="PartySize" required>
+                                                <option selected disabled>Wie viele Personen?</option>
+                                                <option value="1">1 Person</option>
+                                                <option value="2">2 Personen</option>
+                                                <option value="3">3 Personen</option>
+                                                <option value="4">4 Personen</option>
+                                                <option value="5">5 Personen</option>
+                                                <option value="6">6 Personen</option>
+                                                <option value="7">7 Personen</option>
+                                                <option value="8">8 Personen</option>
+                                                <option value="9">9 Personen</option>
+                                                <option value="10">10 Personen</option>
+                                            </select>
+
+            <input type="time" name="ResTime" min="11:00" max="22:00" step="3600000" value="16:00" required>
+        </div>
+        <div>
+            <small>   Reservierungen sind nur zwischen 11:00 und 22:00 Uhr möglich.</small>
+        </div>
+
+        <div id="spacer"></div>
+
+        <div>
+            <input type="text" id="ResName" name="ResName" placeholder="Nachname" required>
+
+            <input type="text" id="ResEmail" name="ResEmail" placeholder="E-Mail Adresse" required>
+
+            <input type="text" name="ResTelephone" id="ResTelephone" placeholder="Telefonnummer" required>
+        </div>
+
+        <div id="spacer"></div>
+
+        <div>
+            <button type="submit" class="btn btn-default btn-lg OT_TableButton">Reservation machen</button>
+        </div>
+
+    </form>
+
+    <div class="reservation-footer">
+        <p>Ihr könnt uns auch per Telefon erreichen um eine Reservation zu machen. <strong> +49 1234 5678910</strong></p>
+    </div>
+
+</section>
