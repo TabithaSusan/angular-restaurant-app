@@ -29,12 +29,13 @@ app.get('/', function(req,res)
 });
 
 app.get(' /test', function(req,res){
-      var con = mysql.createConnection(
+      var con = mysql.createConnection({
             database: "22_IT_Gruppe1",
             host: "195.37.176.178",
             user: "test",
             password: "",
-      );
+});
+
       res.send("HelloWorld")
 });
 
