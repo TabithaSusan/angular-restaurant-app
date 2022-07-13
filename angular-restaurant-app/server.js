@@ -3,6 +3,7 @@
  var app = express(); // create our app w/ express 
  var path = require('path');
  var mysql = require('mysql');
+const { isFromDtsFile } = require('@angular/compiler-cli/src/ngtsc/util/src/typescript');
 
  bodyParser = require('body-parser');
 
@@ -34,5 +35,21 @@
          user: "22_IT_Grp_1",
          password: "WS<M]7{WQMlsDSkK]ZQH",
       });
+      con.connect(function(err)){
+            if(err) throw err;
+            console.log("Connected");
+            con.query("UPDATE * FROM kunden",
+            function(error,results,fields){
+                  if(error) throw error;
+
+                  console.log(results);
+                  res.send(results);
+
+                  con.end(function(err){
+                        if(err) throw err;
+                        console.log("Disconected");
+                  });
+            });
+      }
      res.send("HelloWorld")
  });
