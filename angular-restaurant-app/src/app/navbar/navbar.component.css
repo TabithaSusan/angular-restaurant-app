@@ -5,6 +5,10 @@ html, body, h1, h2, h3, h4, h5, h6, p, li, ol, ul, pre {
 }
 html, body { min-height: 100%; }
 
+header {
+  z-index: 1;
+}
+
 body {
 	background-color: rgb(255, 255, 255);
 	background-image: linear-gradient(to bottom, rgba(233, 226, 226, 0.6), transparent);
