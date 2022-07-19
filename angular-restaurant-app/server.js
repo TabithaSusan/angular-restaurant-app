@@ -1,7 +1,7 @@
 // Recommendation: Declare var con once if the connection will be reused repeatedly throughout the script. Ensure to test performance but it should not
 // make a significant hit
 
-const con = mysql.createConnection({
+var con = mysql.createConnection({
    database: "22_IT_Gruppe1",
    host: "195.37.176.178",
    user: "22_IT_Grp_1",
