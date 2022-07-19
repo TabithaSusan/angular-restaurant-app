@@ -16,6 +16,7 @@ import { TischSuccessComponent } from './tisch-success/tisch-success.component';
 import { RaumSuccessComponent } from './raum-success/raum-success.component';
 import { BestellungSuccessComponent } from './bestellung-success/bestellung-success.component';
 import { BookTableComponent } from './book-table/book-table.component';
+import { FoodmenuComponent } from './foodmenu/foodmenu.component';
 
 @NgModule({
   declarations: [
@@ -31,7 +32,8 @@ import { BookTableComponent } from './book-table/book-table.component';
     TischSuccessComponent,
     RaumSuccessComponent,
     BestellungSuccessComponent,
-    BookTableComponent
+    BookTableComponent,
+    FoodmenuComponent
   ],
   imports: [
     BrowserModule,

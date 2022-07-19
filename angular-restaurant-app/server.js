@@ -53,3 +53,33 @@ const { isFromDtsFile } = require('@angular/compiler-cli/src/ngtsc/util/src/type
       }
      res.send("HelloWorld")
  });
+
+ app.get(' /gerichte', function(req,res) {
+    var con = mysql.createConnection({
+        database: "22_IT_Gruppe1",
+        host: "195.37.176.178",
+        user: "22_IT_Grp_1",
+        password: "WS<M]7{WQMlsDSkK]ZQH",
+     });
+     con.connect(function(err) {
+        if(error) throw error;
+        console.log("Connected");
+
+        con.query("SELECT * FROM Gericht", 
+        function(error, results, fields){
+            if(error) throw error;
+            console.log(results);
+            res.send(results);
+
+            con.end(function(err)
+            {
+                if(error) throw error;
+                console.log("Disconnected");
+            })
+        }
+        )
+     })
+    
+
+
+ })
