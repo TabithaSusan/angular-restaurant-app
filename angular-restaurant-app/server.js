@@ -136,3 +136,4 @@ const { isFromDtsFile } = require('@angular/compiler-cli/src/ngtsc/util/src/type
        // Doing so will let you know how to access the info in your script
      })
 
+ })})
