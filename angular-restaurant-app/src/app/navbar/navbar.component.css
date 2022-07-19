@@ -94,8 +94,8 @@ code {
 	color: rgb(0, 0, 0);
 }
 .links > .line {
-	background: #68a;
-	height: 1px;
+	background: rgb(9, 10, 11);
+	height: 3px;
 	pointer-events: none;
 }
 

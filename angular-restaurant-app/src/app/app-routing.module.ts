@@ -1,7 +1,17 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { BookRoomComponent } from './book-room/book-room.component';
+import { ContactComponent } from './contact/contact.component';
 
-const routes: Routes = [];
+export const routes: Routes = [
+  {path: 'home', component: BookRoomComponent},
+  {path: 'bookRoom', component: BookRoomComponent},
+  {path: 'orderFood', component: BookRoomComponent},
+  {path: 'ShoppingCart', component: BookRoomComponent},
+  {path: 'menu', component: BookRoomComponent},
+  {path: 'contact', component: ContactComponent}
+
+];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
