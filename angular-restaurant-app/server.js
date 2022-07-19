@@ -1,4 +1,40 @@
-// set up ========================
+// Recommendation: Declare var con once if the connection will be reused repeatedly throughout the script. Ensure to test performance but it should not
+// make a significant hit
+/*
+var con = mysql.createConnection({
+   database: "22_IT_Gruppe1",
+   host: "195.37.176.178",
+   user: "22_IT_Grp_1",
+   password: "WS<M]7{WQMlsDSkK]ZQH",
+});
+
+
+SECURITY WARNING! This method is completely insecure and WILL result in the database being hacked when it is installed on a production server.
+There is no way to hide the database credentials from website users. Simply clicking the F12 key when the page is loaded will give the user
+access to this JavaScript file, and your database credentials as well. Attempts at encryption are not worth the try, the JavaScript files can be
+downloaded by a user locally and can be analyzed at their liesure.
+
+The recommended industry practice is to use the 3-Tier Logic, where the information is sent to the server, and the server processes the information,
+connects to the database, retrieves or adds/updates information, and returns results. Thus, access to the database server is only granted to the
+server processing the information, and not to the user.
+
+Additional security benefits to this:
+
+1. When a user has access to this file, they can values before they are sent to the database server and introduce SQL Injections. Example:
+
+'SELECT * FROM Gerichte' By placing a debugger breakpoint before the execution, a hacker can change this statement to
+
+'SELECT * FROM Gerichte;DROP TABLE Gerichte;'
+
+This is catastrophic as the information will be returned, but then the Gerichte table is deleted!
+
+2. More thorough validations. In any client side application, validation of information is a must before submission. Unfortunately, a user can change
+validation values using the Console in the Developer tools and effectively bypass the validation process by returning false positives. The
+absolute rule number 1 for user input is validate the information client side, but never trust the browser to do the work correctly, all
+information being added to a database MUST be revalidated on the server prior to retrieval, insert, update or deletion!
+*/
+
+// Add a new variable that is globally accessible that contains retrieved information that is required app wide, for instance, menu// set up ========================
  var express = require('express');
  var app = express(); // create our app w/ express
  var path = require('path');
