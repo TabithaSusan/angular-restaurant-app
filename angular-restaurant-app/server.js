@@ -35,8 +35,10 @@ const { isFromDtsFile } = require('@angular/compiler-cli/src/ngtsc/util/src/type
          user: "22_IT_Grp_1",
          password: "WS<M]7{WQMlsDSkK]ZQH",
       });
-      con.connect(function(err)){
-            if(err) throw err;
+      con.connect(function(err){
+            if(err){
+                 window.location.href = "error-page404.component.html";
+                }
             console.log("Connected");
             con.query("UPDATE * FROM kunden",
             function(error,results,fields){
@@ -50,7 +52,7 @@ const { isFromDtsFile } = require('@angular/compiler-cli/src/ngtsc/util/src/type
                         console.log("Disconected");
                   });
             });
-      }
+      })
      res.send("HelloWorld")
  });
 
@@ -79,6 +81,7 @@ const { isFromDtsFile } = require('@angular/compiler-cli/src/ngtsc/util/src/type
         }
         )
      })
+
     
 
 
