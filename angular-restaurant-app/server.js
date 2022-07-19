@@ -113,7 +113,7 @@ const { isFromDtsFile } = require('@angular/compiler-cli/src/ngtsc/util/src/type
        
        var a = 1;
        
-       // When the breakpoint is hit, click Console and type console and then enter, the object will appear with its values, this is 
+       // When the breakpoint is hit, click Console and type menu and then enter, the object will appear with its values, this is 
        // a great help to understand the values returned and then how to process the data.
        // The data will appear as an array or object
        
