@@ -45,7 +45,7 @@ information being added to a database MUST be revalidated on the server prior to
  var menu = null;
  var menuFields = null;
 
-const { isFromDtsFile } = require('@angular/compiler-cli/src/ngtsc/util/src/typescript');
+//const { isFromDtsFile } = require('@angular/compiler-cli/src/ngtsc/util/src/typescript');
 
  bodyParser = require('body-parser');
 
@@ -78,7 +78,7 @@ const { isFromDtsFile } = require('@angular/compiler-cli/src/ngtsc/util/src/type
          user: "22_IT_Grp_1",
          password: "WS<M]7{WQMlsDSkK]ZQH",
       });
-      
+
 
       // IMPORTANT! Before executing this or any other SQL that involves user input, such as reservations, customer information, etc., you need to
       // validate the input first and clean the input against SQL Injection. At least bring this up in the presentation that the completed code
@@ -122,14 +122,14 @@ const { isFromDtsFile } = require('@angular/compiler-cli/src/ngtsc/util/src/type
  });
 
  app.get(' /gerichte', function(req,res) {
-    
+
     var con = mysql.createConnection({
         database: "22_IT_Gruppe1",
         host: "195.37.176.178",
         user: "22_IT_Grp_1",
         password: "WS<M]7{WQMlsDSkK]ZQH",
      });
-     
+
      con.connect(function(err) {
         if(error) throw error;
         console.log("Connected");
