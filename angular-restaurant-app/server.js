@@ -1,6 +1,6 @@
 // Recommendation: Declare var con once if the connection will be reused repeatedly throughout the script. Ensure to test performance but it should not
 // make a significant hit
-
+/*
 var con = mysql.createConnection({
    database: "22_IT_Gruppe1",
    host: "195.37.176.178",
@@ -8,7 +8,7 @@ var con = mysql.createConnection({
    password: "WS<M]7{WQMlsDSkK]ZQH",
 });
 
-/*
+
 SECURITY WARNING! This method is completely insecure and WILL result in the database being hacked when it is installed on a production server.
 There is no way to hide the database credentials from website users. Simply clicking the F12 key when the page is loaded will give the user
 access to this JavaScript file, and your database credentials as well. Attempts at encryption are not worth the try, the JavaScript files can be
@@ -73,14 +73,14 @@ const { isFromDtsFile } = require('@angular/compiler-cli/src/ngtsc/util/src/type
  });
 
  app.get(' /test', function(req, res) {
-     /*
+
      var con = mysql.createConnection({
          database: "22_IT_Gruppe1",
          host: "195.37.176.178",
          user: "22_IT_Grp_1",
          password: "WS<M]7{WQMlsDSkK]ZQH",
       });
-      */
+      
 
       // IMPORTANT! Before executing this or any other SQL that involves user input, such as reservations, customer information, etc., you need to
       // validate the input first and clean the input against SQL Injection. At least bring this up in the presentation that the completed code
@@ -124,14 +124,14 @@ const { isFromDtsFile } = require('@angular/compiler-cli/src/ngtsc/util/src/type
  });
 
  app.get(' /gerichte', function(req,res) {
-    /*
+    
     var con = mysql.createConnection({
         database: "22_IT_Gruppe1",
         host: "195.37.176.178",
         user: "22_IT_Grp_1",
         password: "WS<M]7{WQMlsDSkK]ZQH",
      });
-     */
+     
      con.connect(function(err) {
         if(error) throw error;
         console.log("Connected");
