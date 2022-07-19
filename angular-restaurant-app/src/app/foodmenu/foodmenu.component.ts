@@ -8,9 +8,9 @@ import { HttpRequestService } from '../http-request-service';
 })
 export class FoodmenuComponent implements OnInit {
 
-  constructor(private httpRequest: HttpRequestService) { 
+  constructor(private httpRequest: HttpRequestService) {
     console.log("Test");
-    this.httpRequest.getGerichte().subscribe(data => 
+    this.httpRequest.getGerichte().subscribe(data =>
       this.gerichte = data
       );
   }
@@ -18,6 +18,12 @@ export class FoodmenuComponent implements OnInit {
   gerichte:any;
 
   ngOnInit(): void {
+  }
+
+  getMeals() {
+    return this.httpRequest.getGerichte("gerichte").subscribe(x=> {
+      this.gerichte = x;
+    })
   }
 
 }

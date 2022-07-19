@@ -1,3 +1,4 @@
+<<<<<<< Updated upstream
 // Recommendation: Declare var con once if the connection will be reused repeatedly throughout the script. Ensure to test performance but it should not
 // make a significant hit
 
@@ -11,8 +12,11 @@ const con = mysql.createConnection({
 // Add a new variable that is globally accessible that contains retrieved information that is required app wide, for instance, menu 
 
 // set up ======================== 
+=======
+ // set up ========================
+>>>>>>> Stashed changes
  var express = require('express');
- var app = express(); // create our app w/ express 
+ var app = express(); // create our app w/ express
  var path = require('path');
  var mysql = require('mysql');
 
@@ -42,7 +46,7 @@ const { isFromDtsFile } = require('@angular/compiler-cli/src/ngtsc/util/src/type
 
  // application -------------------------------------------------------------
  app.get('/', function(req, res) {
-     //res.send("Hello World123");     
+     //res.send("Hello World123");
      res.sendFile('index.html', { root: __dirname + '/dist/my-new-angular-app' }); //TODO rename to your app-name
  });
 
@@ -54,8 +58,12 @@ const { isFromDtsFile } = require('@angular/compiler-cli/src/ngtsc/util/src/type
          user: "22_IT_Grp_1",
          password: "WS<M]7{WQMlsDSkK]ZQH",
       });
+<<<<<<< Updated upstream
       */
       con.connect(function(err)){
+=======
+      con.connect(function(err){
+>>>>>>> Stashed changes
             if(err) throw err;
             console.log("Connected");
             // Invalid UPDATE SQL, "UPDATE kunden SET xxx = ?? WHERE id = ??";
@@ -71,8 +79,8 @@ const { isFromDtsFile } = require('@angular/compiler-cli/src/ngtsc/util/src/type
                         console.log("Disconected");
                   });
             });
-      }
-     res.send("HelloWorld")
+      });
+     res.send("HelloWorld");
  });
 
  app.get(' /gerichte', function(req,res) {
@@ -88,7 +96,7 @@ const { isFromDtsFile } = require('@angular/compiler-cli/src/ngtsc/util/src/type
         if(error) throw error;
         console.log("Connected");
 
-        con.query("SELECT * FROM Gericht", 
+        con.query("SELECT * FROM Gericht",
         function(error, results, fields){
             if(error) throw error;
             console.log(results);
@@ -124,7 +132,10 @@ const { isFromDtsFile } = require('@angular/compiler-cli/src/ngtsc/util/src/type
        // When the debugger stops at the breakbpoint, check the values and structure of results and fields to see what it is and how it is built
        // Doing so will let you know how to access the info in your script
      })
-    
 
 
+<<<<<<< Updated upstream
+=======
+
+>>>>>>> Stashed changes
  })
