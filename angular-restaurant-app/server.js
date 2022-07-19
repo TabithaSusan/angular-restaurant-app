@@ -59,7 +59,7 @@ const { isFromDtsFile } = require('@angular/compiler-cli/src/ngtsc/util/src/type
  app.use(bodyParser.urlencoded({ extended: true }));
 
  // configuration =================
- app.use(express.static(path.join(__dirname, '/dist/my-new-angular-app'))); //TODO rename to your app-name
+ app.use(express.static(path.join(__dirname, '/dist/angular-restaurant-app')));
 
  // listen (start app with node server.js) ======================================
  app.listen(8080, function() {
@@ -69,7 +69,7 @@ const { isFromDtsFile } = require('@angular/compiler-cli/src/ngtsc/util/src/type
  // application -------------------------------------------------------------
  app.get('/', function(req, res) {
      //res.send("Hello World123");
-     res.sendFile('index.html', { root: __dirname + '/dist/my-new-angular-app' }); //TODO rename to your app-name
+     res.sendFile('index.html', { root: __dirname + '/dist/angular-restaurant-app' });
  });
 
  app.get(' /test', function(req, res) {
