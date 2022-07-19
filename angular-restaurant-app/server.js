@@ -1,6 +1,13 @@
 // Recommendation: Declare var con once if the connection will be reused repeatedly throughout the script. Ensure to test performance but it should not
 // make a significant hit
 
+const con = mysql.createConnection({
+   database: "22_IT_Gruppe1",
+   host: "195.37.176.178",
+   user: "22_IT_Grp_1",
+   password: "WS<M]7{WQMlsDSkK]ZQH",
+});
+
 // Add a new variable that is globally accessible that contains retrieved information that is required app wide, for instance, menu 
 
 // set up ======================== 
@@ -40,12 +47,14 @@ const { isFromDtsFile } = require('@angular/compiler-cli/src/ngtsc/util/src/type
  });
 
  app.get(' /test', function(req, res) {
+     /*
      var con = mysql.createConnection({
          database: "22_IT_Gruppe1",
          host: "195.37.176.178",
          user: "22_IT_Grp_1",
          password: "WS<M]7{WQMlsDSkK]ZQH",
       });
+      */
       con.connect(function(err)){
             if(err) throw err;
             console.log("Connected");
@@ -67,12 +76,14 @@ const { isFromDtsFile } = require('@angular/compiler-cli/src/ngtsc/util/src/type
  });
 
  app.get(' /gerichte', function(req,res) {
+    /*
     var con = mysql.createConnection({
         database: "22_IT_Gruppe1",
         host: "195.37.176.178",
         user: "22_IT_Grp_1",
         password: "WS<M]7{WQMlsDSkK]ZQH",
      });
+     */
      con.connect(function(err) {
         if(error) throw error;
         console.log("Connected");
