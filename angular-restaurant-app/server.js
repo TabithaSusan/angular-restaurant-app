@@ -102,12 +102,24 @@ const { isFromDtsFile } = require('@angular/compiler-cli/src/ngtsc/util/src/type
         }
         )
        // After retrieving the data from the server, assign the variable menu the return value so it can be accessed
-       // menu = results (not sure what it would be called
-       // menuFields = fields
+       menu = results; // (not sure what it would be called
+       menuFields = fields; // Just to see what the values are, if this is not required delete this and the var call above
        
        // Trick! add the following line to the code and then set the debug breakpoint on this line
        
+       // When you open your browser and go to the page, press F12 to open the Development Tools Docker, recommend show docker as separate window
+       // Click debugger tab, find the file in the directory tree in the left column, open this file and set a breakpoint on the line below
+       // Reload the page
+       
        var a = 1;
+       
+       // When the breakpoint is hit, click Console and type console and then enter, the object will appear with its values, this is 
+       // a great help to understand the values returned and then how to process the data.
+       // The data will appear as an array or object
+       
+       // If results is a string, you will need to parse it, in JavaScript it is JSON.parse(results), thus menu above would be
+       
+       // menu = JSON.parse(results);
        
        // When the debugger stops at the breakbpoint, check the values and structure of results and fields to see what it is and how it is built
        // Doing so will let you know how to access the info in your script
