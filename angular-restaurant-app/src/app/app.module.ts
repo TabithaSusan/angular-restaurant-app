@@ -16,8 +16,11 @@ import { TischSuccessComponent } from './tisch-success/tisch-success.component';
 import { RaumSuccessComponent } from './raum-success/raum-success.component';
 import { BestellungSuccessComponent } from './bestellung-success/bestellung-success.component';
 import { BookTableComponent } from './book-table/book-table.component';
+
 import { NavbarComponent } from './navbar/navbar.component';
 import { FooterComponent } from './footer/footer.component';
+import { FoodmenuComponent } from './foodmenu/foodmenu.component';
+
 
 @NgModule({
   declarations: [
@@ -36,6 +39,7 @@ import { FooterComponent } from './footer/footer.component';
     BookTableComponent,
     NavbarComponent,
     FooterComponent,
+    FoodmenuComponent,
   ],
   imports: [
     BrowserModule,
