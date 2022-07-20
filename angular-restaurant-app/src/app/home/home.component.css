@@ -13,7 +13,9 @@ img {
 
 .main {
   position: relative;
-  top: -100px;
+  z-index: 5;
+  top: 900px;
+  bottom: 10px;
 }
 
 .picture-header {

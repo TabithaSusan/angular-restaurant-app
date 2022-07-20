@@ -8,6 +8,7 @@ import { HttpRequestService } from './http-request-service';
 import { CartService } from './cart.service';
 
 import { HeaderComponent } from './header/header.component';
+import { HeaderPhotoComponent } from './header-photo/header-photo.component';
 import { FooterComponent } from './footer/footer.component';
 
 import { HomeComponent } from './home/home.component';
@@ -35,10 +36,12 @@ import { ContactComponent } from './contact/contact.component';
 import { Error404Component } from './error404/error404.component';
 
 
+
 @NgModule({
   declarations: [
     AppComponent,
     HeaderComponent,
+    HeaderPhotoComponent,
     FooterComponent,
     HomeComponent,
     ReserveTableComponent,
@@ -57,7 +60,7 @@ import { Error404Component } from './error404/error404.component';
     FoodOrderErrorComponent,
     FoodOrderSuccessComponent,
     ContactComponent,
-    Error404Component
+    Error404Component,
   ],
   imports: [
     BrowserModule,
