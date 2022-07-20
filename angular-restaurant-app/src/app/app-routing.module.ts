@@ -30,7 +30,7 @@ export const routes: Routes = [
 
   {path: '', redirectTo: 'home', pathMatch: 'full'},
 
-  {path: 'home', component: BookRoomComponent},
+  {path: 'home', component: HomeComponent},
 
   {path: 'reserveTable', component: ReserveTableComponent},
   {path: 'reserveTableConfirm', component: ReserveTableConfirmComponent},
