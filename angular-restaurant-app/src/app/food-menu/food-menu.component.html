@@ -99,5 +99,28 @@
                     Biskuitkuchen in Jakobsmuschelform</td>
                 <td class="price">6,00 €</td>
             </tr>
+            
             </table>
+            <div *ngFor="let gericht of gerichte">
+                <table>
+                  <tr>
+                    <td id="mealName">
+                      {{gerichte.gericht_name}}
+                    </td>
+                    </tr>
+                    <tr>
+                      <td class="mealDescription">
+                        {{gericht.gericht_description}}
+                      </td>
+                    <td class="mealPrice">
+                      {{gerichte.gericht_cost}}
+                    </td>
+                    <td class="btnCart">
+                      <button type="button" class="btn">Bestellen</button>
+                    </td>
+                  </tr>
+                </table>
+                <button type="button" class="btn">Bestellung abschließen</button>
+              </div>
     </body>
+    

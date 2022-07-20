@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { HttpClientModule } from '@angular/common/http';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -20,6 +21,8 @@ import { BookTableComponent } from './book-table/book-table.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { FooterComponent } from './footer/footer.component';
 import { FoodMenuComponent } from './food-menu/food-menu.component';
+import { HttpRequestService } from './http-request-service';
+import { CartService } from './cart.service';
 
 
 @NgModule({
@@ -39,14 +42,18 @@ import { FoodMenuComponent } from './food-menu/food-menu.component';
     BookTableComponent,
     NavbarComponent,
     FooterComponent,
-    FoodMenuComponent,
+    FoodMenuComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule
   ],
-  providers: [],
+  providers: [
+    HttpRequestService,
+    CartService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
