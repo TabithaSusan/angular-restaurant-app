@@ -1,0 +1,92 @@
+
+  .container{
+    padding-top: 18%;
+    height: 350px;
+    text-align: center;
+    background-image: url(../../../../pictures/220518_Download_Unplash/sebastian-coman-photography-blur-cQbOSRpElxw-unsplash.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: 20% 65%;
+  }
+
+  .login-box {
+    position: absolute;
+    left: 50%;
+    width: 600px;
+    padding: 10px;
+    transform: translate(-50%, -50%);
+    background-color: #fff;
+    box-sizing: border-box;
+    box-shadow: 0 15px 25px rgba(0,0,0,.6);
+    border-radius: 10px;
+  }
+
+  .login-box h2 {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 40px;
+    text-align:center;
+    color: rgb(115, 114, 114);
+  }
+
+  .login-box .user-box {
+    position: relative;
+  }
+
+  .login-box .user-box input {
+    width: 100%;
+    padding: 10px 0;
+    font-size: 16px;
+    color: rgb(115, 114, 114);
+    margin-bottom: 30px;
+    border: none;
+    border-bottom: 1px solid rgb(115, 114, 114);
+    outline: none;
+    background: transparent;
+  }
+  .login-box .user-box label {
+    position: absolute;
+    top:0;
+    left: 0;
+    padding: 10px 0;
+    font-size: 16px;
+    color: rgb(115, 114, 114);
+    pointer-events: none;
+    transition: .5s;
+  }
+
+  .login-box .user-box input:focus ~ label,
+  .login-box .user-box input:valid ~ label {
+    top: -20px;
+    left: 0;
+    color: #145833;
+    font-size: 12px;
+  }
+
+  .login-box form button {
+    background-color: #587364;
+    color: white;
+    border-style: none;
+    border: 12px 20px;
+    padding: 12px 20px;
+    margin: 8px 0;
+    box-sizing: border-box;
+    font-size: 1.5em;
+    cursor: pointer;
+  }
+
+  .login-box button:hover {
+    cursor: pointer;
+    background: #537b65;
+    color: #fff;
+    border-radius: 5px;
+    box-shadow: 0 0 5px #88a796,
+                0 0 25px #88a796,
+                0 0 50px #88a796,
+                0 0 100px #88a796;
+  }
+
+  #spacer {
+    padding-top: 4%;
+    width: 10%;
+    height: 5%;
+}

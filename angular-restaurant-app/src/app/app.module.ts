@@ -1,48 +1,63 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { HttpClientModule } from '@angular/common/http';
-
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { ContactComponent } from './contact/contact.component';
-import { ErrorPage404Component } from './error-page404/error-page404.component';
-import { BookRoomComponent } from './book-room/book-room.component';
 import { FormsModule } from '@angular/forms';
-import { Reservierung404Component } from './reservierung404/reservierung404.component';
-import { Buchungs404Component } from './buchungs404/buchungs404.component';
-import { Bestellung404Component } from './bestellung404/bestellung404.component';
-import { Bestellvorgang404Component } from './bestellvorgang404/bestellvorgang404.component';
-import { Reservierungsvorgang404Component } from './reservierungsvorgang404/reservierungsvorgang404.component';
-import { TischSuccessComponent } from './tisch-success/tisch-success.component';
-import { RaumSuccessComponent } from './raum-success/raum-success.component';
-import { BestellungSuccessComponent } from './bestellung-success/bestellung-success.component';
-import { BookTableComponent } from './book-table/book-table.component';
-
-import { NavbarComponent } from './navbar/navbar.component';
-import { FooterComponent } from './footer/footer.component';
-import { FoodMenuComponent } from './food-menu/food-menu.component';
 import { HttpRequestService } from './http-request-service';
 import { CartService } from './cart.service';
+
+import { HeaderComponent } from './header/header.component';
+import { FooterComponent } from './footer/footer.component';
+
+import { HomeComponent } from './home/home.component';
+
+import { ReserveTableComponent } from './reserve-table/reserve-table.component';
+import { ReserveTableConfirmComponent } from './reserve-table-confirm/reserve-table-confirm.component';
+import { ReserveTableErrorComponent } from './reserve-table-error/reserve-table-error.component';
+import { ReserveTableSuccessComponent } from './reserve-table-success/reserve-table-success.component';
+
+import { BookRoomComponent } from './book-room/book-room.component';
+import { BookRoomConfirmComponent } from './book-room-confirm/book-room-confirm.component';
+import { BookRoomErrorComponent } from './book-room-error/book-room-error.component';
+import { BookRoomSuccessComponent } from './book-room-success/book-room-success.component';
+
+import { FoodMenuComponent } from './food-menu/food-menu.component';
+import { FoodOrderCartComponent } from './food-order-cart/food-order-cart.component';
+import { FoodOrderConfirmComponent } from './food-order-confirm/food-order-confirm.component';
+import { FoodOrderCartTooFullComponent } from './food-order-cart-too-full/food-order-cart-too-full.component';
+import { FoodOrderKitchenTooFullComponent } from './food-order-kitchen-too-full/food-order-kitchen-too-full.component';
+import { FoodOrderErrorComponent } from './food-order-error/food-order-error.component';
+import { FoodOrderSuccessComponent } from './food-order-success/food-order-success.component';
+
+import { ContactComponent } from './contact/contact.component';
+
+import { Error404Component } from './error404/error404.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
-    ErrorPage404Component,
-    BookRoomComponent,
-    ContactComponent,
-    Reservierung404Component,
-    Buchungs404Component,
-    Bestellung404Component,
-    Bestellvorgang404Component,
-    Reservierungsvorgang404Component,
-    TischSuccessComponent,
-    RaumSuccessComponent,
-    BestellungSuccessComponent,
-    BookTableComponent,
-    NavbarComponent,
+    HeaderComponent,
     FooterComponent,
-    FoodMenuComponent
+    HomeComponent,
+    ReserveTableComponent,
+    ReserveTableConfirmComponent,
+    ReserveTableErrorComponent,
+    ReserveTableSuccessComponent,
+    BookRoomComponent,
+    BookRoomConfirmComponent,
+    BookRoomErrorComponent,
+    BookRoomSuccessComponent,
+    FoodMenuComponent,
+    FoodOrderCartComponent,
+    FoodOrderConfirmComponent,
+    FoodOrderCartTooFullComponent,
+    FoodOrderKitchenTooFullComponent,
+    FoodOrderErrorComponent,
+    FoodOrderSuccessComponent,
+    ContactComponent,
+    Error404Component
   ],
   imports: [
     BrowserModule,
