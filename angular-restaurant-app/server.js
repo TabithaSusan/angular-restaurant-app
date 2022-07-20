@@ -1,6 +1,6 @@
- // set up ======================== 
+ // set up ========================
  var express = require('express');
- var app = express(); // create our app w/ express 
+ var app = express(); // create our app w/ express
  var path = require('path');
  var mysql = require('mysql');
 //const { isFromDtsFile } = require('@angular/compiler-cli/src/ngtsc/util/src/typescript');
@@ -24,7 +24,7 @@
 
  // application -------------------------------------------------------------
  app.get('/', function(req, res) {
-     //res.send("Hello World123");     
+     //res.send("Hello World123");
      res.sendFile('index.html', { root: __dirname + '/dist/angular-restaurant-app' }); //TODO rename to your app-name
  });
 
@@ -56,7 +56,7 @@
      res.send("HelloWorld")
  });
 
- app.get(' /gerichte', function(req,res) {
+ app.get('/gerichte', function(req,res) {
     var con = mysql.createConnection({
         database: "22_IT_Gruppe1",
         host: "195.37.176.178",
@@ -67,7 +67,7 @@
         if(error) throw error;
         console.log("Connected");
 
-        con.query("SELECT * FROM Gericht", 
+        con.query("SELECT * FROM Gericht",
         function(error, results, fields){
             if(error) throw error;
             console.log(results);
@@ -82,7 +82,7 @@
         )
      })
 
-    
+
 
 
  })
