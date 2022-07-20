@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { HttpRequestService } from '../http-request-service';
+import { CartService } from '../cart.service';
 
 @Component({
   selector: 'app-food-menu',
@@ -8,17 +9,25 @@ import { HttpRequestService } from '../http-request-service';
 })
 export class FoodMenuComponent implements OnInit {
 
-  gerichte:any;
+  constructor(
+    private httpRequest: HttpRequestService,
+    private cartService: CartService) { 
+    console.log("Test");
+    this.httpRequest.getGerichte().subscribe(data => 
+      this.gerichte = data
+      );
+  }
 
-  constructor(private httpRequest: HttpRequestService) { }
+  gerichte:any;
 
   ngOnInit(): void {
   }
-
+  
   getGerichte() {
-    return this.httpRequest.getGerichte()
-      .subscribe(arg => this.gerichte = arg);
-
+    return this.httpRequest.getGerichte().subscribe(x=> {
+      this.gerichte = x;
+    })
   }
+  
 
 }
