@@ -8,7 +8,6 @@ import { HttpRequestService } from './http-request-service';
 import { CartService } from './cart.service';
 
 import { HeaderComponent } from './header/header.component';
-import { HeaderPhotoComponent } from './header-photo/header-photo.component';
 import { FooterComponent } from './footer/footer.component';
 
 import { HomeComponent } from './home/home.component';
@@ -41,7 +40,6 @@ import { Error404Component } from './error404/error404.component';
   declarations: [
     AppComponent,
     HeaderComponent,
-    HeaderPhotoComponent,
     FooterComponent,
     HomeComponent,
     ReserveTableComponent,

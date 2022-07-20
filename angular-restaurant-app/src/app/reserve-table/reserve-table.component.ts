@@ -7,9 +7,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ReserveTableComponent implements OnInit {
 
+  reservedTable:any;
+
   constructor() { }
 
   ngOnInit(): void {
+  }
+
+  submit(reservedTable:any) {
+
+    console.log("form submitted", reservedTable);
   }
 
 }

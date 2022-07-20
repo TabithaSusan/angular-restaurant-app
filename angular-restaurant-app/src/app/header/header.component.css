@@ -6,6 +6,17 @@ header {
 	font-weight: 300;
 }
 
+.header-image-container {
+  background-color: black;
+  height: 400px;
+  width: 100%;
+  z-index: -5;
+}
+
+.header-image {
+width: 100%;
+}
+
 /* Appearance */
 .links > a {
 	color: rgb(114, 105, 105);

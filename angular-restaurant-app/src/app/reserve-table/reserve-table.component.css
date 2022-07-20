@@ -1,20 +1,25 @@
-.reservation {
-  padding-top: 18%;
-  height: 350px;
+.main {
   text-align: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position: 20% 65%;
+  position: sticky;
+  z-index: 5;
+  margin-top: 420px;
+  margin-bottom: 120px;
 }
 
-#ResForm {
-  padding-top: 2%;
+.main h1 {
+  text-align: left;
+  padding-left: 10%;
+}
+
+input, select {
+  width: 250px;
 }
 
 input[type=text] {
   border: 12px 20px;
   padding: 12px 20px;
-  margin: 8px 0;
+  margin-top: 8px;
+  margin-bottom: 8px;
   margin-right: 2%;
   box-sizing: border-box;
 }
@@ -49,7 +54,6 @@ input[type=time] {
 
 small {
   margin: 3%;
-  color: white;
   font-size: 1.2em;
 }
 
@@ -62,7 +66,6 @@ form {
 }
 
 #PartySize {
-  background-color: white;
 }
 
 button {
@@ -76,7 +79,12 @@ button {
   font-size: 1.5em;
 }
 
+button:hover {
+  cursor: pointer;
+    background: #86a293 ;
+    color: #fff;
+}
+
 .reservation-footer {
-  color: white;
   font-size: 1.2em;
 }

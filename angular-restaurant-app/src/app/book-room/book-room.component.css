@@ -81,3 +81,11 @@ margin-bottom: 1.5%;
   width: 10%;
   height: 5%;
 }
+
+.main {
+  position: sticky;
+  z-index: 5;
+  margin-top: 420px;
+  margin-bottom: 120px;
+}
+
