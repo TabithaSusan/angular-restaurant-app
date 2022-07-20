@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
 
 @Component({
   selector: 'app-book-table',
@@ -7,9 +8,17 @@ import { Component, OnInit } from '@angular/core';
 })
 export class BookTableComponent implements OnInit {
 
-  constructor() { }
+  gerichte:any;
+
+  constructor(private http:HttpClient) { }
 
   ngOnInit(): void {
+  }
+
+  getGerichte() {
+    return this.http.get("gerichte").subscribe(x=> {
+      this.gerichte = x;
+    })
   }
 
 }
