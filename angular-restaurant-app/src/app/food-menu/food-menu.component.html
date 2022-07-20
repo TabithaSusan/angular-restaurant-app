@@ -3,12 +3,22 @@
 <div *ngFor="let gericht of gerichte">
   <table>
     <tr>
-      <td id="firstColumn">
+      <td id="mealName">
         {{gerichte.gericht_name}}
       </td>
-      <td class="secondColumn">
+      </tr>
+      <tr>
+        <td class="mealDescription">
+          {{gericht.gericht_description}}
+        </td>
+      <td class="mealPrice">
         {{gerichte.gericht_cost}}
+      </td>
+      <td class="btnCart">
+        <button type="button" class="btn">Bestellen</button>
       </td>
     </tr>
   </table>
+  <button type="button" class="btn">Bestellung abschließen</button>
 </div>
+
