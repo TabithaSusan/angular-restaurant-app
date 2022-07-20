@@ -19,7 +19,7 @@ import { BookTableComponent } from './book-table/book-table.component';
 
 import { NavbarComponent } from './navbar/navbar.component';
 import { FooterComponent } from './footer/footer.component';
-import { FoodmenuComponent } from './foodmenu/foodmenu.component';
+import { FoodMenuComponent } from './food-menu/food-menu.component';
 
 
 @NgModule({
@@ -39,7 +39,7 @@ import { FoodmenuComponent } from './foodmenu/foodmenu.component';
     BookTableComponent,
     NavbarComponent,
     FooterComponent,
-    FoodmenuComponent,
+    FoodMenuComponent,
   ],
   imports: [
     BrowserModule,

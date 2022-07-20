@@ -1,1 +1,14 @@
 <p>food-menu works!</p>
+
+<div *ngFor="let gericht of gerichte">
+  <table>
+    <tr>
+      <td id="firstColumn">
+        {{gerichte.gericht_name}}
+      </td>
+      <td class="secondColumn">
+        {{gerichte.gericht_cost}}
+      </td>
+    </tr>
+  </table>
+</div>

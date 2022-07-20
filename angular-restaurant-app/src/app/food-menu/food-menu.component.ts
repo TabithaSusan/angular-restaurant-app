@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { HttpRequestService } from '../http-request-service';
 
 @Component({
   selector: 'app-food-menu',
@@ -7,9 +8,17 @@ import { Component, OnInit } from '@angular/core';
 })
 export class FoodMenuComponent implements OnInit {
 
-  constructor() { }
+  gerichte:any;
+
+  constructor(private httpRequest: HttpRequestService) { }
 
   ngOnInit(): void {
+  }
+
+  getGerichte() {
+    return this.httpRequest.getGerichte()
+      .subscribe(arg => this.gerichte = arg);
+
   }
 
 }
