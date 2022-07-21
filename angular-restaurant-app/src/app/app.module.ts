@@ -1,9 +1,10 @@
 import { NgModule } from '@angular/core';
+import { Injectable, Type } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { HttpClientModule } from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { FormsModule } from '@angular/forms';
+
 import { HttpRequestService } from './http-request-service';
 import { CartService } from './cart.service';
 
@@ -12,7 +13,6 @@ import { FooterComponent } from './footer/footer.component';
 
 import { HomeComponent } from './home/home.component';
 
-import { ReserveTableComponent } from './reserve-table/reserve-table.component';
 import { ReserveTableConfirmComponent } from './reserve-table-confirm/reserve-table-confirm.component';
 import { ReserveTableErrorComponent } from './reserve-table-error/reserve-table-error.component';
 import { ReserveTableSuccessComponent } from './reserve-table-success/reserve-table-success.component';
@@ -34,7 +34,7 @@ import { ContactComponent } from './contact/contact.component';
 
 import { Error404Component } from './error404/error404.component';
 
-
+import {}
 
 @NgModule({
   declarations: [
@@ -42,7 +42,6 @@ import { Error404Component } from './error404/error404.component';
     HeaderComponent,
     FooterComponent,
     HomeComponent,
-    ReserveTableComponent,
     ReserveTableConfirmComponent,
     ReserveTableErrorComponent,
     ReserveTableSuccessComponent,
@@ -62,9 +61,10 @@ import { Error404Component } from './error404/error404.component';
   ],
   imports: [
     BrowserModule,
-    FormsModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    Injectable,
+    Type
   ],
   providers: [
     HttpRequestService,
