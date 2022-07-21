@@ -1,20 +1,20 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { Bestellvorgang404Component } from './bestellvorgang404.component';
+import { FoodOrderCartComponent } from './food-order-cart.component';
 
-describe('Bestellvorgang404Component', () => {
-  let component: Bestellvorgang404Component;
-  let fixture: ComponentFixture<Bestellvorgang404Component>;
+describe('FoodOrderCartComponent', () => {
+  let component: FoodOrderCartComponent;
+  let fixture: ComponentFixture<FoodOrderCartComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ Bestellvorgang404Component ]
+      declarations: [ FoodOrderCartComponent ]
     })
     .compileComponents();
   });
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(Bestellvorgang404Component);
+    fixture = TestBed.createComponent(FoodOrderCartComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
