@@ -1,3 +1,16 @@
+.header-title {
+  text-align: center;
+  color: white;
+  font-size: 3em;
+}
+
+.main {
+  position: sticky;
+  z-index: 5;
+  margin-top: 250px;
+  margin-bottom: 120px;
+}
+
 .container {
   height: 350px;
   text-align: center;
@@ -54,14 +67,6 @@ input[type=date],input[type=time]{
               0 0 100px #88a796;
 }
 
-
-h1{
-  font-family: Arial, Helvetica, sans-serif;
-  font-size: 40px;
-  text-align:center;
-  color: rgb(115, 114, 114);
-}
-
 .form-group-1{
   display:flex;
 }
@@ -81,3 +86,5 @@ margin-bottom: 1.5%;
   width: 10%;
   height: 5%;
 }
+
+
