@@ -1,0 +1,90 @@
+.main {
+  text-align: center;
+  position: sticky;
+  z-index: 5;
+  margin-top: 420px;
+  margin-bottom: 120px;
+}
+
+.main h1 {
+  text-align: left;
+  padding-left: 10%;
+}
+
+input, select {
+  width: 250px;
+}
+
+input[type=text] {
+  border: 12px 20px;
+  padding: 12px 20px;
+  margin-top: 8px;
+  margin-bottom: 8px;
+  margin-right: 2%;
+  box-sizing: border-box;
+}
+
+input[type=date] {
+  border: 12px 20px;
+  padding: 12px 20px;
+  margin: 8px 0;
+  box-sizing: border-box;
+}
+
+input[type=time] {
+  border: 12px 20px;
+  padding: 11px 20px;
+  margin: 8px 0;
+  margin-left: 2%;
+  box-sizing: border-box;
+}
+
+.PartySize {
+  border: 12px 20px;
+  padding: 13px 20px;
+  margin: 8px 0;
+  margin-left: 2%;
+  box-sizing: border-box;
+}
+
+#spacer {
+  width: 10%;
+  height: 5%;
+}
+
+small {
+  margin: 3%;
+  font-size: 1.2em;
+}
+
+.container {
+  width: 1170px;
+}
+
+form {
+  color: #707070;
+}
+
+#PartySize {
+}
+
+button {
+  background-color: #587364;
+  color: white;
+  border-style: none;
+  border: 12px 20px;
+  padding: 12px 20px;
+  margin: 8px 0;
+  box-sizing: border-box;
+  font-size: 1.5em;
+}
+
+button:hover {
+  cursor: pointer;
+    background: #86a293 ;
+    color: #fff;
+}
+
+.reservation-footer {
+  font-size: 1.2em;
+}
