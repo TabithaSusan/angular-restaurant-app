@@ -2,10 +2,23 @@ table {
   width: 50%;
   margin-left: auto;
   margin-right: auto;
+  padding-bottom: 100px;
 }
 caption {
   margin-top: 5%;
   font-size: large;
   color: #587364;
   text-decoration: underline;
+}
+
+.header-title {
+  text-align: center;
+  color: white;
+  font-size: 3em;
+}
+
+.main {
+  position: sticky;
+  margin-top: 250px;
+  margin-bottom: 80px;
 }
