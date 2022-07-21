@@ -1,28 +1,30 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { HttpClientModule } from '@angular/common/http';
-
+import { HttpRequestService } from './http-request-service';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { CartService } from './cart.service';
+
 import { ContactComponent } from './contact/contact.component';
 import { ErrorPage404Component } from './error-page404/error-page404.component';
 import { BookRoomComponent } from './book-room/book-room.component';
 import { FormsModule } from '@angular/forms';
-import { Reservierung404Component } from './reservierung404/reservierung404.component';
-import { Buchungs404Component } from './buchungs404/buchungs404.component';
 import { Bestellung404Component } from './bestellung404/bestellung404.component';
 import { Bestellvorgang404Component } from './bestellvorgang404/bestellvorgang404.component';
-import { Reservierungsvorgang404Component } from './reservierungsvorgang404/reservierungsvorgang404.component';
-import { TischSuccessComponent } from './tisch-success/tisch-success.component';
-import { RaumSuccessComponent } from './raum-success/raum-success.component';
 import { BestellungSuccessComponent } from './bestellung-success/bestellung-success.component';
-import { BookTableComponent } from './book-table/book-table.component';
 
 import { NavbarComponent } from './navbar/navbar.component';
 import { FooterComponent } from './footer/footer.component';
 import { FoodMenuComponent } from './food-menu/food-menu.component';
-import { HttpRequestService } from './http-request-service';
-import { CartService } from './cart.service';
+
+import { ReserveTableComponent } from './reserve-table/reserve-table.component';
+import { ReserveTableErrorComponent } from './reserve-table-error/reserve-table-error.component';
+import { ReserveTableSuccessComponent } from './reserve-table-success/reserve-table-success.component';
+import { ReserveTableConfirmComponent } from './reserve-table-confirm/reserve-table-confirm.component';
+import { BookRoomConfirmComponent } from './book-room-confirm/book-room-confirm.component';
+import { BookRoomErrorComponent } from './book-room-error/book-room-error.component';
+import { BookRoomSuccessComponent } from './book-room-success/book-room-success.component';
 
 
 @NgModule({
@@ -31,18 +33,19 @@ import { CartService } from './cart.service';
     ErrorPage404Component,
     BookRoomComponent,
     ContactComponent,
-    Reservierung404Component,
-    Buchungs404Component,
     Bestellung404Component,
     Bestellvorgang404Component,
-    Reservierungsvorgang404Component,
-    TischSuccessComponent,
-    RaumSuccessComponent,
     BestellungSuccessComponent,
-    BookTableComponent,
     NavbarComponent,
     FooterComponent,
-    FoodMenuComponent
+    FoodMenuComponent,
+    ReserveTableComponent,
+    ReserveTableErrorComponent,
+    ReserveTableSuccessComponent,
+    ReserveTableConfirmComponent,
+    BookRoomConfirmComponent,
+    BookRoomErrorComponent,
+    BookRoomSuccessComponent
   ],
   imports: [
     BrowserModule,
