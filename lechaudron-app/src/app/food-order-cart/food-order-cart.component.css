@@ -1,0 +1,12 @@
+.header-title {
+  text-align: center;
+  color: white;
+  font-size: 3em;
+}
+
+.main {
+  position: sticky;
+  z-index: 5;
+  margin-top: 250px;
+  margin-bottom: 120px;
+}
