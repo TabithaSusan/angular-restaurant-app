@@ -8,11 +8,15 @@ import { HttpRequestService } from '../http-request.service';
 })
 export class FoodMenuComponent implements OnInit {
 
+constructor(private httpRequest: HttpRequestService) {
 
-  gerichte:any;
+  this.httpRequest.getGericht().subscribe(data =>
+    this.gericht = data);
+}
+  gericht:any;
+
 
   ngOnInit(): void {
   }
-
 
 }
