@@ -1,14 +1,20 @@
-<div class="main">
-  <h1>Tisch reservieren</h1>
 
-  <form #reserveTable="ngForm" (ngSubmit)="submit(reservedTable)" name="ResForm" id="ResForm">
-      <!-- still not working currently because of missing connection towards database-->
+<div class="header-title">
+  <h1>Tisch reservieren</h1>
+</div>
+
+<div class="main">
+<p>Gerne könnt ihr einen Tisch bei uns Reservieren! die Verfügbarenzeiten für Tische liegt zwischen 11:00 und 22:00 Uhr.
+  Reservieren könnt ihr natürlich auf dieser Website rund um die Uhr! Solltet ihr jedoch lieber persönlich via Telefon oder einen Besuch einen Tisch reservieren, könnt ihr das auch gerne machen. Wir freune uns auf euch!</p>
+
+  <form name="ResForm" method="post" action="booktable.php">
+
 
       <div>
 
-          <input type="date" id="datepicker" name="startDate" placeholder="Welches Datum?"  ngModel>
+          <input type="date" id="datepicker" name="startDate" placeholder="Welches Datum?" required>
 
-          <select name="PartySize" class="PartySize" id="PartySize"  ngModel>
+          <select name="PartySize" class="PartySize" id="PartySize" required>
                                               <option selected disabled>Wie viele Personen?</option>
                                               <option value="1">1 Person</option>
                                               <option value="2">2 Personen</option>
@@ -22,7 +28,7 @@
                                               <option value="10">10 Personen</option>
                                           </select>
 
-          <input type="time" name="ResTime" min="11:00" max="22:00" step="3600000" value="16:00"  ngModel>
+          <input type="time" name="ResTime" min="11:00" max="22:00" step="3600000" value="16:00" required>
       </div>
       <div>
           <small>   Reservierungen sind nur zwischen 11:00 und 22:00 Uhr möglich.</small>
@@ -31,11 +37,11 @@
       <div id="spacer"></div>
 
       <div>
-          <input type="text" id="ResName" name="ResName" placeholder="Nachname"  ngModel>
+          <input type="text" id="ResName" name="ResName" placeholder="Nachname" required>
 
-          <input type="text" id="ResEmail" name="ResEmail" placeholder="E-Mail Adresse"  ngModel>
+          <input type="text" id="ResEmail" name="ResEmail" placeholder="E-Mail Adresse" required>
 
-          <input type="text" name="ResTelephone" id="ResTelephone" placeholder="Telefonnummer"  ngModel>
+          <input type="text" name="ResTelephone" id="ResTelephone" placeholder="Telefonnummer" required>
       </div>
 
       <div id="spacer"></div>
@@ -49,5 +55,4 @@
   <div class="reservation-footer">
       <p>Ihr könnt uns auch per Telefon erreichen um eine Reservation zu machen. <strong> +49 1234 5678910</strong></p>
   </div>
-
 </div>

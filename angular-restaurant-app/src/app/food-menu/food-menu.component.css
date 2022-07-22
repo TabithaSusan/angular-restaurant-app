@@ -9,3 +9,10 @@ caption {
   color: #587364;
   text-decoration: underline;
 }
+
+.main {
+  position: sticky;
+  z-index: 5;
+  margin-top: 420px;
+  margin-bottom: 120px;
+}

@@ -11,9 +11,7 @@ describe('ReserveTableComponent', () => {
       declarations: [ ReserveTableComponent ]
     })
     .compileComponents();
-  });
 
-  beforeEach(() => {
     fixture = TestBed.createComponent(ReserveTableComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
