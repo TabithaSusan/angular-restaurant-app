@@ -1,3 +1,9 @@
+.header-title {
+  text-align: center;
+  color: white;
+  font-size: 3em;
+}
+
 .container {
   position: relative;
   background-repeat: no-repeat;
