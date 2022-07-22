@@ -1,4 +1,4 @@
- // set up ========================
+
 var express  = require('express');
 var app      = express();                               // create our app w/ express
 var path     = require('path');
@@ -14,7 +14,7 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
  // configuration =================
-app.use(express.static(path.join(__dirname, '/dist/lechaudron-app')));
+app.use(express.static(path.join(__dirname, '/dist/lechaudron-app/browser')));
 
  // listen (start app with node server.js) ======================================
 app.listen(8080, function(){
@@ -25,10 +25,10 @@ app.listen(8080, function(){
 app.get('/', function(req,res)
 {
       //res.send("Hello World123");
-      res.sendFile('index.html', { root: __dirname+'/dist/lechaudron-app' });
+      res.sendFile('index.html', { root: __dirname+'/dist/lechaudron-app/browser' });
 });
 
-app.get('/gerichte', function(req,res) {
+app.get('/gericht', function(req,res) {
   var con = mysql.createConnection({
       database: "22_IT_Gruppe1",
       host: "195.37.176.178",
@@ -39,7 +39,7 @@ app.get('/gerichte', function(req,res) {
       if(error) throw error;
       console.log("Connected");
 
-      con.query("SELECT * FROM Gericht",
+      con.query("SELECT * FROM gericht",
       function(error, results, fields){
           if(error) throw error;
           console.log(results);
