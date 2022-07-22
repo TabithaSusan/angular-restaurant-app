@@ -25,7 +25,8 @@ import { Error404Component } from './error404/error404.component';
 
 const routes: Routes = [
 
-  {path: '', redirectTo: 'home', pathMatch: 'full'},
+  {path: '', component: HomeComponent},
+
 
   {path: 'home', component: HomeComponent},
 
@@ -48,6 +49,8 @@ const routes: Routes = [
   {path: 'contact', component: ContactComponent},
   {path: 'legalDisclosure', component: LegalDisclosureComponent},
   {path: 'error404', component: Error404Component},
+
+  {path: '**', component: Error404Component},
 ];
 
 @NgModule({
