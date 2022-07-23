@@ -151,3 +151,25 @@ CREATE TABLE `22_IT_Gruppe1`.`GerichtInBestellung` (
     ON DELETE CASCADE
     ON UPDATE NO ACTION);
     
+CREATE TABLE `22_IT_Gruppe1`.`table` (
+  `table_id` INT NOT NULL AUTO_INCREMENT,
+  `seatnumber` INT NOT NULL,
+  PRIMARY KEY (`table_id`));
+  
+CREATE TABLE `22_IT_Gruppe1`.`t_reserviertVon` (
+  `table_id` INT NOT NULL,
+  `kunden_id` BIGINT UNSIGNED NOT NULL,
+  PRIMARY KEY (`table_id`, `kunden_id`),
+  UNIQUE INDEX `kunden_id_UNIQUE` (`kunden_id` ASC),
+  CONSTRAINT `reserviertVon`
+    FOREIGN KEY (`kunden_id`)
+    REFERENCES `22_IT_Gruppe1`.`kunden` (`kunden_id`)
+    ON DELETE CASCADE
+    ON UPDATE NO ACTION,
+  CONSTRAINT `reservierterTisch`
+    FOREIGN KEY (`table_id`)
+    REFERENCES `22_IT_Gruppe1`.`table` (`table_id`)
+    ON DELETE CASCADE
+    ON UPDATE NO ACTION);
+
+    
