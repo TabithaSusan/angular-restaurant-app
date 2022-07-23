@@ -11,4 +11,7 @@ export class HttpRequestService {
 
 
   }
+  getGericht():Observable<any> {
+    return this.httpClient.get('gericht');
+  }
 }
