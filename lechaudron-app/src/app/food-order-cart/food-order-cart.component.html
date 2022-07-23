@@ -3,5 +3,13 @@
 </div>
 
 <div class="main">
-
+  <div class="cart-item" *ngFor="let item of items">
+    <span>{{ items }}</span>
+    <!--
+    <span>{{ item.gericht_name }}</span>
+    <span>{{ item.gericht_price | currency }}</span>
+    
+  </div>
+  <button type="button" (click)="order(item)">Bestellen</button></td>
+    -->
 </div>
