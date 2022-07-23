@@ -4,6 +4,7 @@
 
 <div class="main">
 
+
     <table class="speisekarte">
         <caption>Vorspeisen</caption>
         <tr>
@@ -22,6 +23,8 @@
         <tr>
           <td>mit Brie und Baguette</td>
           <td class="price">9,50 €</td>
+          <!--addToCart(...) sollte das Gericht, das in der Zeile steht, mitgegeben bekommen-->
+          <td><button type="button" (click)="addToCart('food')">Add to cart</button></td>
         </tr>
         <tr>
           <td><strong>Soupe à l’oignon</strong>
@@ -103,9 +106,10 @@
                     Biskuitkuchen in Jakobsmuschelform</td>
                 <td class="price">6,00 €</td>
             </tr>
-
           </table>
-            <div *ngFor="let gericht of gerichte">
+
+<!--
+            <div *ngFor="let gericht of gericht">
                 <table>
                   <tr>
                     <td id="mealName">
@@ -127,6 +131,6 @@
                 <button type="button" class="btn">Bestellung abschließen</button>
               </div>
               </div>
+-->
 
-
-
+</div>

@@ -33,6 +33,7 @@ app.get('/gericht', function(req,res) {
       database: "22_IT_Gruppe1",
       host: "195.37.176.178",
       user: "22_IT_Grp_1",
+      port: "20133",
       password: "WS<M]7{WQMlsDSkK]ZQH",
    });
    con.connect(function(err) {
