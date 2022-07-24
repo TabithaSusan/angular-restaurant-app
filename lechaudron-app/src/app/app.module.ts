@@ -60,7 +60,11 @@ import { GlobalErrorHandlerService } from './global-error-handler.service';
     AppRoutingModule,
     HttpClientModule,
   ],
-  providers: [{ provide: ErrorHandler, useClass: GlobalErrorHandlerService},
+  providers: [{
+    provide:
+    ErrorHandler,
+    useClass:
+    GlobalErrorHandlerService},
   ],
   bootstrap: [AppComponent]
 })
