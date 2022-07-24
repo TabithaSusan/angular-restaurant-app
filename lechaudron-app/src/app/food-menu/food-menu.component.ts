@@ -15,6 +15,7 @@ constructor(
 
     this.httpRequest.getGericht().subscribe(data =>
     this.gericht = data);
+    console.log("gericht:"+this.gericht);
 }
   gericht:any;
 
