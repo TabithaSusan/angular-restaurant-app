@@ -6,7 +6,6 @@
 
 .main {
   position: sticky;
-  z-index: 5;
   margin-top: 250px;
   margin-bottom: 120px;
 }
@@ -44,7 +43,7 @@ input[type=date],input[type=time]{
   color: rgb(115, 114, 114);
 }
 
-.container form button {
+.container button {
   background-color: #587364;
   color: white;
   border-style: none;
@@ -86,5 +85,48 @@ margin-bottom: 1.5%;
   width: 10%;
   height: 5%;
 }
+
+#spacer_1{
+  width: 10%;
+  height: 60%;
+}
+
+.alert-danger{
+  background-color: #537b65;
+}
+
+.alert{
+  color: #fff;
+  margin-bottom: 15px;
+  text-align: center;
+}
+
+
+table {
+  font-family: arial, sans-serif;
+  border-collapse: collapse;
+  width: 70%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+td, th {
+  border: 1px solid #dddddd;
+  text-align: left;
+  padding: 8px;
+}
+
+tr:nth-child(even) {
+  background-color: #dddddd;
+}
+
+
+
+
+
+
+
+
+
 
 

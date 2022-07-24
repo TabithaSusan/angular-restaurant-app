@@ -1,59 +1,67 @@
+
+
 <div class="header-title">
   <h1>Raum buchen</h1>
 </div>
 <div class="main">
 <div class="container">
-  <form>
+  <form [formGroup]="registrationForm" (ngSubmit)="onSubmit()">
       <div class = "form-group-1">
       <div class="form-group">
-        <select name="anzahlPersonen" id="anzahlPersonen" class="from-control" required>
-              <option selected disabled>Wie viele Personen?</option>
-              <option value="1">10 Person</option>
-              <option value="2">25 Personen</option>
-              <option value="3">50 Personen</option>
-              <option value="4">100 Personen</option>
-              <option value="5">150 Personen</option>
-              <option value="6">200 Personen</option>
+        <select (change)="changeAnzahlPersonen($event)" formControlName="anzahlPersonen">
+              <option selected disabled value="">Wie viele Personen?</option>
+              <option *ngFor="let anzahlPerson of AnzahlPersonen" [ngValue]="anzahlPerson">
+            {{ anzahlPerson }}
+          </option>
         </select>
+        <div class="invalid-feedback" *ngIf="isSubmitted && anzahlPersonen?.invalid">
+          <sup>*</sup>Bitte Anzahl Personen auswählen!
+        </div>
       </div>
       <div class="form-group">
-        <input type="date" name = "datum" class = "from-control" required>
+        <input (change)="changeDatum($event)" formControlName="datum" type="date" name = "datum" class = "from-control" [(ngModel)]="changed">
+        <div class="invalid-feedback" *ngIf="isSubmitted && datum?.invalid">
+          <sup>*</sup>Bitte das Datum auswählen!
+        </div>
       </div>
       <div class="form-group">
-        <input type="time" name = "uhrzeit" class = "from-control" required>
+        <input type="time" name = "uhrzeit" class = "from-control" required ngModel>
       </div>
       </div>
       <pre></pre>
       <div class="form-group-2">
       <div class = "form-group">
-        <select name="kellnerAuswahl" id="kellnerAuswahl" class="from-control" required>
-              <option selected disabled>Kellner Auswahl</option>
-              <option value="1">Jay Mustermann</option>
-              <option value="2">Phil Robert</option>
-              <option value="3">Gloria Delgado</option>
-              <option value="4">Claire Prittchet</option>
-              <option value="5">Haley Dunphy</option>
-              <option value="6">Cameron Tucker</option>
+        <select (change)="changeKellnerAuswahl($event)" formControlName="kellnerAuswahl">
+          <option  selected disabled value="">Kellner Auswahl</option>
+          <option *ngFor="let kellner of KellnerAuswahl" [ngValue]="kellner">
+            {{ kellner }}
+          </option>
         </select>
+          <div class="invalid-feedback" *ngIf="isSubmitted && kellnerAuswahl?.invalid">
+          <sup>*</sup>Bitte wählen Sie den Kellner aus!
+          </div>
       </div>
       <div class = "form-group">
-        <select name="menuAuswahl" id="menuAuswahl" class="from-control" required>
-              <option selected disabled>Menü Auswahl</option>
-              <option value="1">Hochzeitsmenü</option>
-              <option value="2">Geburtstagsmenü</option>
-              <option value="3">Hauptmenü</option>
-              <option value="4">Vorspeise</option>
-              <option value="5">Nachspeise</option>
+        <select (change)="changeMenuAuswahl($event)" formControlName="menuAuswahl">
+          <option selected disabled value="">Menü Auswahl</option>
+          <option *ngFor="let menu of MenuAuswahl" [ngValue]="menu">
+            {{ menu }}
+          </option>
         </select>
+          <div class="invalid-feedback" *ngIf="isSubmitted && menuAuswahl?.invalid">
+          <sup>*</sup>Bitte wählen Sie den Menü aus!
+          </div>
       </div>
       <div class = "form-group">
-        <select name="raumAuswahl" id="raumAuswahl" class="from-control" required>
-              <option selected disabled>Raum Auswahl</option>
-              <option value="1">Party Raum</option>
-              <option value="2">Bar</option>
-              <option value="3">Luxus Raum</option>
-              <option value="4">Raum mit Balkon</option>
+        <select (change)="changeRaumAuswahl($event)" formControlName="raumAuswahl">
+          <option value="">Raum Auswahl</option>
+          <option *ngFor="let raum of RaumAuswahl" [ngValue]="raum">
+            {{ raum }}
+          </option>
         </select>
+          <div class="invalid-feedback" *ngIf="isSubmitted && raumAuswahl?.invalid">
+          <sup>*</sup>Bitte wählen Sie den Raum aus!
+          </div>
       </div>
     </div>
     <div id="spacer"></div>
@@ -62,32 +70,44 @@
         <button type="submit" class="btn btn-default btn-lg OT_TableButton">Raum buchen</button>
     </div>
   </form>
+
+
+
+  <div id="spacer"></div>
+
+  <h2>Bitte um Bestätigung</h2>
+
+  <table>
+    <tr>
+      <td>Anzahl Personen: </td>
+      <td *ngIf="isSubmitted && anzahlPersonen?.valid"> {{ modifiedAnzahlPersonen }} </td>
+    </tr>
+    <tr>
+      <td>Datum: </td>
+      <td  *ngIf="isSubmitted && datum?.valid" > {{ modifiedDatum }} </td>
+    </tr>
+    <tr>
+      <td>Kellner: </td>
+      <td  *ngIf="isSubmitted && kellnerAuswahl?.valid" > {{ modifiedKellner }} </td>
+    </tr>
+    <tr>
+      <td>Menü: </td>
+      <td  *ngIf="isSubmitted && menuAuswahl?.valid" > {{ modifiedMenu }} </td>
+    </tr>
+    <tr>
+      <td>Raum: </td>
+      <td  *ngIf="isSubmitted && raumAuswahl?.valid" > {{ modifiedRaum }} </td>
+    </tr>
+  </table>
+  <div id="spacer"></div>
+  <div>
+    <button *ngIf="isSubmitted && raumAuswahl?.valid && menuAuswahl?.valid && kellnerAuswahl?.valid && anzahlPersonen?.valid && datum?.valid" type ="submit" class="btn btn-default btn-lg OT_TableButton" routerLink= "/bookRoomSuccess">Bestätigen</button>
+  </div>
+
+  <div id="spacer_1"></div>
+
 </div>
 </div>
 
-<!--
-<select>
-<option *ngFor="let room of rooms"[value]="room.id">
-{{room.anzahlPersonen}}
-{{room.kellnerAuswahl}}
-{{room.menuAuswahl}}
-{{room.raumAuswahl}}
-</option>
-</select>
 
 
-
-
-<br>
-    {{modifiedtext}}
-      <pre></pre>
-      <a href="#">
-        <span></span>
-        <span></span>
-        <span></span>
-        <span></span>
-        Reservation machen
-      </a>
-
-
--->
