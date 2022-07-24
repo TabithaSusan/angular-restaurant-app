@@ -20,6 +20,9 @@
       </div>
       <div class="form-group">
         <input (change)="changeDatum($event)" formControlName="datum" type="date" name = "datum" class = "from-control" [(ngModel)]="changed">
+        <div class="invalid-feedback" *ngIf="isSubmitted && datum?.invalid">
+          <sup>*</sup>Bitte das Datum auswählen!
+        </div>
       </div>
       <div class="form-group">
         <input type="time" name = "uhrzeit" class = "from-control" required ngModel>
@@ -98,7 +101,7 @@
   </table>
   <div id="spacer"></div>
   <div>
-    <button *ngIf="isSubmitted" type ="submit" class="btn btn-default btn-lg OT_TableButton" routerLink= "/bookRoomSuccess">Bestätigen</button>
+    <button *ngIf="isSubmitted && raumAuswahl?.valid && menuAuswahl?.valid && kellnerAuswahl?.valid && anzahlPersonen?.valid && datum?.valid" type ="submit" class="btn btn-default btn-lg OT_TableButton" routerLink= "/bookRoomSuccess">Bestätigen</button>
   </div>
 
   <div id="spacer_1"></div>

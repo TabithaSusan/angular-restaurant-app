@@ -12,10 +12,40 @@ p {
 
 .main {
   position: sticky;
-  z-index: 5;
   margin-top: 250px;
-  margin-bottom: 120px;
+  margin-bottom: 300px;
+}
+
+.container {
+  height: 350px;
   text-align: center;
+  background-color: white;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: 20% 65%;
+}
+
+
+.form-group-1{
+  display:flex;
+}
+
+.form-group-2{
+  display: flex;
+}
+
+.form-group{
+flex-basis: 100px;
+margin-left: 20%;
+margin-top: 1.5%;
+margin-bottom: 1.5%;
+}
+
+
+
+#spacer_1{
+  width: 10%;
+  height: 60%;
 }
 
 .reservation {
@@ -27,27 +57,48 @@ p {
   background-position: 20% 65%;
 }
 
-input[type=text] {
-  border: 12px 20px;
+input[type=text] , select, textarea {
+  border: 1px solid rgb(161, 157, 157);
+  border-radius: 4px;
+  resize: vertical;
+  text-align: center;
+  font-size: large;
+  color: rgb(115, 114, 114);
+  width: 300%;
   padding: 12px 20px;
   margin: 8px 0;
   margin-right: 2%;
+  background-color: #fff;
   box-sizing: border-box;
 }
 
 input[type=date] {
   border: 12px 20px;
+  width: 188%;
   padding: 12px 20px;
   margin: 8px 0;
+  border: 1px solid rgb(161, 157, 157);
+  border-radius: 4px;
+  resize: vertical;
+  text-align: center;
+  font-size: large;
+  color: rgb(115, 114, 114);
   box-sizing: border-box;
 }
 
 input[type=time] {
   border: 12px 20px;
+  width: 188%;
   padding: 11px 20px;
   margin: 8px 0;
   margin-left: 2%;
   box-sizing: border-box;
+  border: 1px solid rgb(161, 157, 157);
+  border-radius: 4px;
+  resize: vertical;
+  text-align: center;
+  font-size: large;
+  color: rgb(115, 114, 114);
 }
 
 .PartySize {
@@ -81,7 +132,7 @@ form {
   background-color: white;
 }
 
-button {
+.container button {
   background-color: #587364;
   color: white;
   border-style: none;
@@ -90,9 +141,41 @@ button {
   margin: 8px 0;
   box-sizing: border-box;
   font-size: 1.5em;
+  cursor: pointer;
 }
+
+.container button:hover {
+  cursor: pointer;
+  background: #537b65;
+  color: #fff;
+  border-radius: 5px;
+  box-shadow: 0 0 5px #88a796,
+              0 0 25px #88a796,
+              0 0 50px #88a796,
+              0 0 100px #88a796;
+}
+
 
 .reservation-footer {
   color: white;
   font-size: 1.2em;
+}
+
+
+table {
+  font-family: arial, sans-serif;
+  border-collapse: collapse;
+  width: 70%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+td, th {
+  border: 1px solid #dddddd;
+  text-align: left;
+  padding: 8px;
+}
+
+tr:nth-child(even) {
+  background-color: #dddddd;
 }
