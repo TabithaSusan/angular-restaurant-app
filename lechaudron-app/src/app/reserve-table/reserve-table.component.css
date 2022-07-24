@@ -116,7 +116,7 @@ input[type=time] {
 
 small {
   margin: 3%;
-  color: white;
+  color: rgb(10, 10, 10);
   font-size: 1.2em;
 }
 
