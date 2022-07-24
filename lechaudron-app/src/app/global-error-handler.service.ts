@@ -15,8 +15,8 @@ import { Router } from '@angular/router';
 export class GlobalErrorHandlerService implements ErrorHandler {
 
   constructor(private injector: Injector) { }
-  
-  
+
+
   handleError(error: any): void {
     let router = this.injector.get(Router);
     console.log('URL: ' + router.url);
@@ -47,4 +47,11 @@ export class GlobalErrorHandlerService implements ErrorHandler {
     console.error(foodOrderKitchenToFull);
     router.navigate(['/foodOrderKitchenTooFull']);
   }
+  foodOrderError(foodOrderError: any): void {
+    let router = this.injector.get(Router);
+    console.log('URL: ' + router.url);
+    console.error(foodOrderError);
+    router.navigate(['/foodOrderError']);
+  }
 }
+
