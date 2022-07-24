@@ -1,4 +1,5 @@
 import { NgModule } from '@angular/core';
+import { ErrorHandler } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { HttpClientModule} from '@angular/common/http';
 import { HttpRequestService } from './http-request.service';
@@ -29,6 +30,7 @@ import { FoodOrderErrorComponent } from './food-order-error/food-order-error.com
 import { ContactComponent } from './contact/contact.component';
 import { LegalDisclosureComponent } from './legal-disclosure/legal-disclosure.component';
 import { Error404Component } from './error404/error404.component';
+import { GlobalErrorHandlerService } from './global-error-handler.service';
 
 @NgModule({
   declarations: [
@@ -58,7 +60,7 @@ import { Error404Component } from './error404/error404.component';
     AppRoutingModule,
     HttpClientModule,
   ],
-  providers: [
+  providers: [{ provide: ErrorHandler, useClass: GlobalErrorHandlerService},
   ],
   bootstrap: [AppComponent]
 })
