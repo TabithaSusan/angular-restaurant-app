@@ -4,45 +4,60 @@
 </div>
 
 <div class="main">
+<div class="container">
 <p>Gerne könnt ihr einen Tisch bei uns Reservieren! die Verfügbarenzeiten für Tische liegt zwischen 11:00 und 22:00 Uhr.
   Reservieren könnt ihr natürlich auf dieser Website rund um die Uhr! Solltet ihr jedoch lieber persönlich via Telefon oder einen Besuch einen Tisch reservieren, könnt ihr das auch gerne machen. Wir freune uns auf euch!</p>
 
-  <form name="ResForm" method="post" action="booktable.php">
+  <form name="ResForm" [formGroup]="registrationForm" (ngSubmit)="onSubmit()">
 
-
-      <div>
-
-          <input type="date" id="datepicker" name="startDate" placeholder="Welches Datum?" required>
-
-          <select name="PartySize" class="PartySize" id="PartySize" required>
-                                              <option selected disabled>Wie viele Personen?</option>
-                                              <option value="1">1 Person</option>
-                                              <option value="2">2 Personen</option>
-                                              <option value="3">3 Personen</option>
-                                              <option value="4">4 Personen</option>
-                                              <option value="5">5 Personen</option>
-                                              <option value="6">6 Personen</option>
-                                              <option value="7">7 Personen</option>
-                                              <option value="8">8 Personen</option>
-                                              <option value="9">9 Personen</option>
-                                              <option value="10">10 Personen</option>
+        <div class = "form-group-1">
+            <div class="form-group">
+          <input  (change)="changeDatum($event)" formControlName="datum"  type="date" id="datepicker" name="startDate" placeholder="Welches Datum?" required [(ngModel)]="changed">
+          <div class="invalid-feedback" *ngIf="isSubmitted && datum?.invalid">
+            <sup>*</sup>Bitte das Datum auswählen!
+          </div>
+            </div>
+            <div class="form-group">
+          <select (change)="changePartysize($event)" formControlName="partysize" name="PartySize" class="PartySize" id="PartySize" required>
+                                              <option selected disabled  value="">Wie viele Personen?</option>
+                                              <option *ngFor="let partysize of PartySize" [ngValue]="partysize">
+                                                {{ partysize }}
+                                              </option>
                                           </select>
-
+                                          <div class="invalid-feedback" *ngIf="isSubmitted && partysize?.invalid">
+                                            <sup>*</sup>Bitte Anzahl Personen auswählen!
+                                          </div>
+            </div>
+            <div class="form-group">
           <input type="time" name="ResTime" min="11:00" max="22:00" step="3600000" value="16:00" required>
       </div>
+        </div>
       <div>
           <small>   Reservierungen sind nur zwischen 11:00 und 22:00 Uhr möglich.</small>
       </div>
 
       <div id="spacer"></div>
-
-      <div>
-          <input type="text" id="ResName" name="ResName" placeholder="Nachname" required>
-
-          <input type="text" id="ResEmail" name="ResEmail" placeholder="E-Mail Adresse" required>
-
-          <input type="text" name="ResTelephone" id="ResTelephone" placeholder="Telefonnummer" required>
+      <pre></pre>
+      <div class="form-group-2">
+      <div class = "form-group">
+          <input  (change)="changeNachname($event)" formControlName="nachname" type="text" id="ResName" name="ResName" placeholder="Nachname" required>
+          <div class="invalid-feedback" *ngIf="isSubmitted && nachname?.invalid">
+            <sup>*</sup>Bitte das Nachname eingeben!
+          </div>
       </div>
+      <div class = "form-group">
+          <input  (change)="changeEmail($event)" formControlName="email" type="text" id="ResEmail" name="ResEmail" placeholder="E-Mail Adresse" required>
+          <div class="invalid-feedback" *ngIf="isSubmitted && email?.invalid">
+            <sup>*</sup>Bitte die Email Adresse eingeben!
+          </div>
+        </div>
+        <div class = "form-group">
+          <input  (change)="changeTelefonnummer($event)" formControlName="telefonnummer" type="text" name="ResTelephone" id="ResTelephone" placeholder="Telefonnummer" required>
+          <div class="invalid-feedback" *ngIf="isSubmitted && telefonnummer?.invalid">
+            <sup>*</sup>Bitte das Telefonnummer eingeben!
+          </div>
+        </div>
+        </div>
 
       <div id="spacer"></div>
 
@@ -55,4 +70,40 @@
   <div class="reservation-footer">
       <p>Ihr könnt uns auch per Telefon erreichen um eine Reservation zu machen. <strong> +49 1234 5678910</strong></p>
   </div>
+
+  <div id="spacer"></div>
+
+<h2>Bitte um Bestätigung</h2>
+
+  <table>
+    <tr>
+      <td>Nachname: </td>
+      <td *ngIf="isSubmitted && nachname?.valid"> {{ modifiedNachname }} </td>
+    </tr>
+    <tr>
+      <td>Datum: </td>
+      <td  *ngIf="isSubmitted && datum?.valid" > {{ modifiedDatum }} </td>
+    </tr>
+    <tr>
+      <td>Anzahl Personen: </td>
+      <td  *ngIf="isSubmitted && partysize?.valid" > {{ modifiedPartysize }} </td>
+    </tr>
+    <tr>
+      <td>Email: </td>
+      <td  *ngIf="isSubmitted && email?.valid" > {{ modifiedEmail }} </td>
+    </tr>
+    <tr>
+      <td>Telefonnummer: </td>
+      <td  *ngIf="isSubmitted && telefonnummer?.valid" > {{ modifiedTelefonnummer }} </td>
+    </tr>
+  </table>
+  <div id="spacer"></div>
+  <div>
+    <button *ngIf="isSubmitted && nachname?.valid && datum?.valid && partysize?.valid && email?.valid && telefonnummer?.valid" type ="submit" class="btn btn-default btn-lg OT_TableButton" routerLink= "/reserveTableSuccess">Bestätigen</button>
+  </div>
+
+  <div id="spacer_1"></div>
+
+
+</div>
 </div>

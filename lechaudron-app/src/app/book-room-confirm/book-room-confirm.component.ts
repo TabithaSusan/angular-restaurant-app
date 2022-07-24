@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { BookRoomComponent } from '../book-room/book-room.component';
 
 @Component({
   selector: 'app-book-room-confirm',
@@ -7,7 +8,10 @@ import { Component, OnInit } from '@angular/core';
 })
 export class BookRoomConfirmComponent implements OnInit {
 
-  constructor() { }
+
+
+
+  raueme:any;
 
   ngOnInit(): void {
   }
