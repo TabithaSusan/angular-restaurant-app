@@ -49,3 +49,26 @@
         </form>
   </div>
 </div>
+
+
+<div *ngFor="let raum of raueme">
+    <table>
+      <tr>
+        <td id="roomName">
+          {{raum.raum_name}}
+        </td>
+        </tr>
+        <tr>
+          <td class="roomDescription">
+            {{raum.raum_description}}
+          </td>
+        <td class="roomPrice">
+          {{raum.raum_cost}}
+        </td>
+        <td class="btnCart">
+          <button type="button" class="btn">Reservieren</button>
+        </td>
+      </tr>
+    </table>
+    <button type="button" class="btn">Reservierung abschließen</button>
+  </div>

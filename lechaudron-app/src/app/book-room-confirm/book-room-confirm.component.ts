@@ -7,7 +7,8 @@ import { Component, OnInit } from '@angular/core';
 })
 export class BookRoomConfirmComponent implements OnInit {
 
-  constructor() { }
+
+  raueme:any;
 
   ngOnInit(): void {
   }
