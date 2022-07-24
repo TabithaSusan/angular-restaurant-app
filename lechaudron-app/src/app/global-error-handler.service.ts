@@ -5,6 +5,13 @@ import { Router } from '@angular/router';
 @Injectable({
   providedIn: 'root'
 })
+/*Klasse um Fehler in der server.js Datei zu implementieren
+  in server.js "if(errorname) throw errorname" schreiben
+  Überleitung auf vorgefertigte Errorseiten
+  Aufrund fehlender Datenbankverbindung grad nicht aktiv beziehungsweise nicht getestet worden
+  In der Datenbank sind erstmal nur drei statt vier Trigger enthalten, um den Fehhler auszulösen
+  Fehler bei Überschreitung von Raum-/Tisch-/Bestellkapazitäten
+*/
 export class GlobalErrorHandlerService implements ErrorHandler {
 
   constructor(private injector: Injector) { }
