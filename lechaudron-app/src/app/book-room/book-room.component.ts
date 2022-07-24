@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, Validators } from '@angular/forms';
+import { DatePipe, Time } from '@angular/common';
+import { DATE_PIPE_DEFAULT_TIMEZONE } from '@angular/common';
 
 @Component({
   selector: 'app-book-room',
@@ -13,16 +15,26 @@ export class BookRoomComponent implements OnInit {
   KellnerAuswahl: any =['Jay Mustermann', 'Phil Robert', 'Gloria Delgado', 'Claire Prittchet', 'Haley Dunphy', 'Cameron Tucker'];
   MenuAuswahl: any =['Hochzeitsmenü', 'Nachspeise', 'Vorspeise', 'Hauptmenü', 'Geburtstagsmenü'];
   RaumAuswahl: any =['Party Raum', 'Bar', 'Luxus Raum', 'Raum mit Balkon'];
-  
+  changed:Date;
+  changedUhrzeit:Time;
+
   modifiedAnzahlPersonen:string;
   modifiedKellner:string;
   modifiedMenu:string;
   modifiedRaum:string;
+  modifiedDatum:string;
+  modifiedUhrzeit:string;
+  
+  pipe = new DatePipe('en-US');
+  pipeTime = new DatePipe('en-US');
+ 
   
   
   constructor(public fb: FormBuilder) {}
   registrationForm = this.fb.group({
     anzahlPersonen:  ['', [Validators.required]],
+    datum:['',[Validators.required]],
+    uhrzeit:['',[Validators.required]],
     kellnerAuswahl:  ['', [Validators.required]],
     menuAuswahl:  ['', [Validators.required]],
     raumAuswahl:  ['', [Validators.required]],
@@ -56,6 +68,29 @@ export class BookRoomComponent implements OnInit {
     this.customFunctionRaum(e.target.value);
   }
 
+  changeFormat(changed:any) {
+    let ChangedFormat = this.pipe.transform(this.changed, 'dd/MM/YYYY');
+    this.modifiedDatum = ChangedFormat as string;
+    //this.modifiedDatum = ChangedFormat;
+  }
+
+  onClick() {
+    this.changeFormat(this.changed);
+    console.log(this.modifiedDatum);
+  }
+
+  changeDatum(e: any) {
+    this.datum?.setValue(e.target.value, {
+      onlySelf: true,
+    });
+    this.customFunctionDatum(e.target.value);
+  }
+
+  customFunctionDatum(e:any){
+    this.modifiedDatum = " "+ e;
+  }
+
+
   customFunctionAnzahlPersonen(e:any){
     this.modifiedAnzahlPersonen = " "+ e;
   }
@@ -75,10 +110,6 @@ export class BookRoomComponent implements OnInit {
 
 
   // Access formcontrols getter
-  get cityName() {
-    return this.registrationForm.get('cityName');
-  }
-
   get anzahlPersonen() {
     return this.registrationForm.get('anzahlPersonen');
   }
@@ -95,6 +126,15 @@ export class BookRoomComponent implements OnInit {
     return this.registrationForm.get('raumAuswahl');
   }
 
+  get datum() {
+    return this.registrationForm.get('datum');
+  }
+
+  get uhrzeit(){
+    return this.registrationForm.get("uhrzeit");
+  }
+
+
 
   onSubmit(): void {
     console.log(this.registrationForm);
@@ -106,14 +146,6 @@ export class BookRoomComponent implements OnInit {
     }
   }
 
-
-  /*
-
- submit(reserve:any){
-  console.log("Form submitted",reserve)
- }
-
-*/
 
   ngOnInit(): void {
 
